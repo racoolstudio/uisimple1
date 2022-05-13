@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import 'home/widgets/HomePage.dart';
+import 'home/widgets/NavController.dart';
 
-void main() => runApp(UIsample1());
+void main() => runApp(MyApp());
 
-class UIsample1 extends StatelessWidget {
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(
@@ -13,11 +13,10 @@ class UIsample1 extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        backgroundColor: Colors.white,
         primaryColor: Color(0xffE29547),
       ),
-      home: SafeArea(
-        child: HomePage(),
-      ),
+      home: HomePage(),
     );
   }
 }

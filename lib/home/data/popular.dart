@@ -8,8 +8,11 @@ class Popular {
       required this.image,
       required this.price,
       this.newPrice});
-  static List<Popular> popularinfo() {
-    return [
+
+  
+}
+
+   List<Popular> popularinfo = <Popular>[
       Popular(name: 'Sverom chair', image: 'assets/ch1.png', price: '\$400'),
       Popular(
           name: 'Norrviken chair and table',
@@ -22,5 +25,3 @@ class Popular {
           price: '\$899',
           newPrice: '\$599')
     ];
-  }
-}

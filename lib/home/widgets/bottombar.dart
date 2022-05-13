@@ -16,19 +16,9 @@ class _BottomBarState extends State<BottomBar> {
         BottomNavigationBarItem(
             icon: GestureDetector(
               onTap: () {
-                setState(() {
-                  if (color == false) {
-                    print('orange');
-                    color = true;
-                  } else {
-                    print('blue');
-                    color = false;
-                  }
-                  ;
-                });
+                
               },
               child: Container(
-                padding: EdgeInsets.only(top: 10),
                 child: SvgPicture.asset(
                   'assets/home.svg',
                   color: color ? Theme.of(context).primaryColor : Colors.blue,
