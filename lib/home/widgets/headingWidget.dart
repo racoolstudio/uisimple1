@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import '../constant.dart';
+import 'package:ui1sample/home/constant.dart';
 
 class HeadWidget extends StatelessWidget {
   final String headName;
@@ -30,10 +30,10 @@ class HeadWidget extends StatelessWidget {
                 SizedBox(
                   width: 3,
                 ),
-                Icon(
-                  Icons.arrow_forward,
-                  size: 16,
+                SvgPicture.asset(
+                  'assets/arrow.svg',
                   color: Theme.of(context).primaryColor,
+                  width: 16,
                 ),
               ],
             ),

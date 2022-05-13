@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../data/category.dart';
+import 'package:ui1sample/home/data/category.dart';
 
 class Slide1 extends StatelessWidget {
   final name = Categoryy.firstslide();
@@ -17,7 +17,7 @@ class Slide1 extends StatelessWidget {
                 width: 130,
               ),
           separatorBuilder: (_, index) => SizedBox(
-                width: 0.5,
+                width: 0.3,
               ),
           scrollDirection: Axis.horizontal,
           itemCount: name.length),

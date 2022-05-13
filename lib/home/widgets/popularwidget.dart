@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import '../constant.dart';
-import '../data/popular.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:ui1sample/home/constant.dart';
+import 'package:ui1sample/home/data/popular.dart';
 
 // ignore: must_be_immutable
 class PopularWidget extends StatelessWidget {
@@ -57,8 +58,20 @@ class PopularWidget extends StatelessWidget {
         Positioned(
             bottom: 25,
             left: 5,
-            child:
-                fontType('${popular.price}', Colors.black, 14, FontWeight.w600))
+            child: fontType(
+                '${popular.price}', Colors.black, 14, FontWeight.w600)),
+        Positioned(
+          top: 20,
+          right: 10,
+          child: CircleAvatar(
+            backgroundColor: Colors.white,
+            child: SvgPicture.asset(
+              'assets/fav.svg',
+              width: 16,
+            ),
+            radius: 15,
+          ),
+        ),
       ]),
     );
   }

@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
-
-import '../data/popular.dart';
+import 'package:ui1sample/home/data/popular.dart';
 
 class FinalWidget extends StatelessWidget {
   final popularlist = Popular.popularinfo();
