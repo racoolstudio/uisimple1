@@ -6,18 +6,16 @@ class Slide1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: 20),
-      padding: EdgeInsets.only(
+      margin: const EdgeInsets.only(top: 20),
+      padding: const EdgeInsets.only(
         left: 10,
       ),
       height: 50,
-      child: ListView.separated(
+      width: MediaQuery.of(context).size.width,
+      child: ListView.builder(
           itemBuilder: (context, index) => Image.asset(
-                '${name[index]}',
+                name[index],
                 width: 130,
-              ),
-          separatorBuilder: (_, index) => SizedBox(
-                width: 0.3,
               ),
           scrollDirection: Axis.horizontal,
           itemCount: name.length),

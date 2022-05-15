@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class CustomAppBar extends StatelessWidget {
-  final Color color = Color(0xffAAAAAA);
+  final Color color = const Color(0xffAAAAAA);
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(15),
+      padding: const EdgeInsets.all(15),
       child: Column(
         children: [
           Row(
@@ -28,17 +28,17 @@ class CustomAppBar extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 15,
           ),
           Container(
             height: 60,
-            padding: EdgeInsets.only(top: 10),
+            padding: const EdgeInsets.only(top: 10),
             child: TextField(
               cursorColor: Colors.grey,
               decoration: InputDecoration(
                 border: OutlineInputBorder(
-                  borderSide: BorderSide(
+                  borderSide: const BorderSide(
                     color: Colors.white,
                     width: 1,
                   ),
@@ -49,7 +49,7 @@ class CustomAppBar extends StatelessWidget {
                   child: SvgPicture.asset(
                     'assets/search.svg',
                     width: 20,
-                    color: Color(0xffaaaaaa),
+                    color: const Color(0xffaaaaaa),
                   ),
                 ),
                 hintText: 'Chair, desk, lamp, etc',

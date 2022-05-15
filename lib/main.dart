@@ -9,15 +9,13 @@ class UIsample1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(statusBarColor: Colors.transparent));
+        const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor: Color(0xffE29547),
+        primaryColor: const Color(0xffE29547),
       ),
-      home: SafeArea(
-        child: HomePage(),
-      ),
+      home: HomePage(),
     );
   }
 }

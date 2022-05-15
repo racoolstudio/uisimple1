@@ -5,9 +5,8 @@ import 'package:ui1sample/home/data/popular.dart';
 import 'package:ui1sample/home/widgets/banner1.dart';
 import 'package:ui1sample/home/widgets/banner2.dart';
 import 'package:ui1sample/home/widgets/slide2.dart';
-import 'package:ui1sample/home/widgets/slide2widget.dart';
-import 'package:ui1sample/home/data/slide2data.dart';
 import 'package:ui1sample/informationPage/informationPage.dart';
+
 import 'appBar.dart';
 import 'headingWidget.dart';
 import 'popularwidget.dart';
@@ -22,7 +21,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 255, 253, 253),
+      backgroundColor: const Color.fromARGB(255, 255, 253, 253),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -35,7 +34,7 @@ class _HomePageState extends State<HomePage> {
                 name: 'Sverom chair', image: 'assets/ch1.png', price: '\$400')),
             Banner2(),
             Padding(
-              padding: EdgeInsets.only(
+              padding: const EdgeInsets.only(
                 left: 15,
               ),
               child: Align(
@@ -45,7 +44,7 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     fontType('Rooms', Colors.black, 20, FontWeight.w600),
                     fontType('Furniture for every corners in your home',
-                        Color(0xffaaaaaa), 12, FontWeight.w400)
+                        const Color(0xffaaaaaa), 12, FontWeight.w400)
                   ],
                 ),
               ),
@@ -61,7 +60,7 @@ class _HomePageState extends State<HomePage> {
               onTap: (() => Navigator.push(
                   (context), MaterialPageRoute(builder: (context) => Info()))),
               child: Container(
-                padding: EdgeInsets.only(top: 10),
+                padding: const EdgeInsets.only(top: 10),
                 child: SvgPicture.asset(
                   'assets/home.svg',
                   color: Theme.of(context).primaryColor,
