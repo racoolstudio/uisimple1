@@ -4,12 +4,13 @@ import 'package:ui1sample/home/constant.dart';
 import 'package:ui1sample/home/data/popular.dart';
 import 'package:ui1sample/home/widgets/banner1.dart';
 import 'package:ui1sample/home/widgets/banner2.dart';
+import 'package:ui1sample/home/widgets/popularwidget.dart';
 import 'package:ui1sample/home/widgets/slide2.dart';
 import 'package:ui1sample/informationPage/informationPage.dart';
 
+import '../../bag/bagPage.dart';
 import 'appBar.dart';
 import 'headingWidget.dart';
-import 'popularwidget.dart';
 import 'slide1.dart';
 
 class HomePage extends StatefulWidget {
@@ -18,20 +19,55 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final List _popularList = Popular.popularinfo();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 255, 253, 253),
-      body: SingleChildScrollView(
-        child: Column(
+      body: ListView(shrinkWrap: true, children: [
+        Column(
           children: [
             CustomAppBar(),
             HeadWidget('Categories'),
             Slide1(),
             Banner1(),
             HeadWidget('Popular'),
-            PopularWidget(Popular(
-                name: 'Sverom chair', image: 'assets/ch1.png', price: '\$400')),
+            Container(
+              height: 550,
+              padding: const EdgeInsets.only(bottom: 30),
+              margin: const EdgeInsets.only(
+                left: 10,
+                right: 10,
+                top: 20,
+              ),
+              child: OrientationBuilder(
+                builder: (context, orientation) {
+                  return GridView.builder(
+                    physics: const NeverScrollableScrollPhysics(),
+                    shrinkWrap: true,
+                    gridDelegate:
+                        const SliverGridDelegateWithMaxCrossAxisExtent(
+                      maxCrossAxisExtent: 300,
+                      mainAxisSpacing: 10,
+                      childAspectRatio: 0.7,
+                      crossAxisSpacing: 10,
+                    ),
+                    itemBuilder: (context, index) => GestureDetector(
+                        onTap: () => setState(() {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        Info(_popularList[index]),
+                                  ));
+                            }),
+                        child: PopularWidget(_popularList[index])),
+                    itemCount: _popularList.length - 1,
+                  );
+                },
+              ),
+            ),
             Banner2(),
             Padding(
               padding: const EdgeInsets.only(
@@ -52,19 +88,15 @@ class _HomePageState extends State<HomePage> {
             Slide2(),
           ],
         ),
-      ),
+      ]),
       bottomNavigationBar: BottomNavigationBar(items: [
         // ignore: prefer_const_constructors
         BottomNavigationBarItem(
-            icon: GestureDetector(
-              onTap: (() => Navigator.push(
-                  (context), MaterialPageRoute(builder: (context) => Info()))),
-              child: Container(
-                padding: const EdgeInsets.only(top: 10),
-                child: SvgPicture.asset(
-                  'assets/home.svg',
-                  color: Theme.of(context).primaryColor,
-                ),
+            icon: Container(
+              padding: const EdgeInsets.only(top: 10),
+              child: SvgPicture.asset(
+                'assets/home.svg',
+                color: Theme.of(context).primaryColor,
               ),
             ),
             label: 'home'),
@@ -75,8 +107,16 @@ class _HomePageState extends State<HomePage> {
             label: 'chat'),
         BottomNavigationBarItem(
           label: 'cart',
-          icon: SvgPicture.asset(
-            'assets/cart.svg',
+          icon: GestureDetector(
+            onTap: () => setState(() {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => BagWidgetPage()),
+              );
+            }),
+            child: SvgPicture.asset(
+              'assets/cart.svg',
+            ),
           ),
         ),
         BottomNavigationBarItem(

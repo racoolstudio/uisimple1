@@ -9,8 +9,8 @@ class PopularWidget extends StatelessWidget {
   PopularWidget(this.popular);
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 250,
+    return SizedBox(
+      height: 350,
       width: 170,
       child: Stack(children: [
         Positioned(
@@ -23,7 +23,7 @@ class PopularWidget extends StatelessWidget {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
               color: Colors.white,
-              boxShadow: [
+              boxShadow: const [
                 BoxShadow(
                     color: Colors.grey,
                     spreadRadius: 2,
@@ -43,7 +43,7 @@ class PopularWidget extends StatelessWidget {
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage(
-                  '${popular.image}',
+                  popular.image,
                 ),
                 fit: BoxFit.fill,
               ),
@@ -54,14 +54,13 @@ class PopularWidget extends StatelessWidget {
             bottom: 55,
             left: 5,
             child: fontType(
-                '${popular.name}', Color(0xffaaaaaa), 12, FontWeight.w400)),
+                popular.name, const Color(0xffaaaaaa), 12, FontWeight.w400)),
         Positioned(
             bottom: 25,
             left: 5,
-            child: fontType(
-                '${popular.price}', Colors.black, 14, FontWeight.w600)),
+            child: fontType(popular.price, Colors.black, 14, FontWeight.w600)),
         Positioned(
-          top: 20,
+          top: 25,
           right: 10,
           child: CircleAvatar(
             backgroundColor: Colors.white,

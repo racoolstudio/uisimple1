@@ -8,9 +8,9 @@ class Banner1 extends StatelessWidget {
     return Stack(
       children: [
         Container(
-          margin: EdgeInsets.only(right: 10, left: 10, top: 20),
+          margin: const EdgeInsets.only(right: 10, left: 10, top: 20),
           height: 130,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             image: DecorationImage(
                 image: AssetImage('assets/banner1.png'), fit: BoxFit.fill),
           ),
@@ -18,31 +18,32 @@ class Banner1 extends StatelessWidget {
         Positioned(
           top: 40,
           left: 40,
-          child: fontType('High quality sofa\nstarted', Color(0xff4E5471), 12,
-              FontWeight.w400),
+          child: fontType('High quality sofa\nstarted', const Color(0xff4E5471),
+              12, FontWeight.w400),
         ),
         Positioned(
           top: 75,
           left: 40,
-          child: fontType('70%', Color(0xff4E5471), 32, FontWeight.w700),
+          child: fontType('70%', const Color(0xff4E5471), 32, FontWeight.w700),
         ),
         Positioned(
           top: 95,
           left: 110,
-          child: fontType('off', Color(0xff4E5471), 14, FontWeight.w400),
+          child: fontType('off', const Color(0xff4E5471), 14, FontWeight.w400),
         ),
         Positioned(
           bottom: 10,
           left: 40,
           child: Row(
             children: [
-              fontType('See all items', Color(0xff4E5471), 10, FontWeight.w400),
-              SizedBox(
+              fontType('See all items', const Color(0xff4E5471), 10,
+                  FontWeight.w400),
+              const SizedBox(
                 width: 8,
               ),
               SvgPicture.asset(
                 'assets/arrow.svg',
-                color: Color(0xff4E5471),
+                color: const Color(0xff4E5471),
                 width: 16,
               ),
             ],

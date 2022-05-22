@@ -7,9 +7,10 @@ class Banner2 extends StatelessWidget {
     return Stack(
       children: [
         Container(
-          margin: EdgeInsets.only(right: 10, left: 10, top: 20, bottom: 20),
+          margin:
+              const EdgeInsets.only(right: 10, left: 10, top: 10, bottom: 20),
           height: 113,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             image: DecorationImage(
                 image: AssetImage('assets/banner2.png'), fit: BoxFit.fill),
           ),
@@ -17,23 +18,23 @@ class Banner2 extends StatelessWidget {
         Positioned(
           top: 40,
           left: 40,
-          child: fontType('Sale', Color(0xffE29547), 32, FontWeight.w600),
+          child: fontType('Sale', const Color(0xffE29547), 32, FontWeight.w600),
         ),
         Positioned(
           top: 85,
           left: 40,
           child: fontType(
-              'All chair up to', Color(0xffE29547), 14, FontWeight.w400),
+              'All chair up to', const Color(0xffE29547), 14, FontWeight.w400),
         ),
         Positioned(
           top: 78,
           left: 140,
-          child: fontType('70%', Color(0xffE29547), 20, FontWeight.w600),
+          child: fontType('70%', const Color(0xffE29547), 20, FontWeight.w600),
         ),
         Positioned(
           top: 85,
           left: 183,
-          child: fontType('off', Color(0xffE29547), 14, FontWeight.w400),
+          child: fontType('off', const Color(0xffE29547), 14, FontWeight.w400),
         ),
       ],
     );
