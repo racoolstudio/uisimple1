@@ -242,7 +242,7 @@ class _ProductInfoWidgetState extends State<ProductInfoWidget> {
                     child: Align(
                       alignment: Alignment.topLeft,
                       child: fontType('Similar products',
-                          const Color(0xff121212), 16, FontWeight.w600),
+                          const Color(0xff121212),16, FontWeight.w600),
                     ),
                   ),
                   Container(
